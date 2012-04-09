@@ -1,0 +1,16 @@
+#header {
+    background: white;
+}
+
+#left {
+    width: 50%;
+    float: left;
+}
+
+#right {
+    width: 100%;
+}
+
+#footer {
+    clear:both;
+}

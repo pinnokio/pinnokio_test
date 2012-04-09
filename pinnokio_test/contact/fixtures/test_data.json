@@ -1,0 +1,16 @@
+[
+    {
+        "pk": 1, 
+        "model": "contact.person", 
+        "fields": {
+            "bio": "Test bio", 
+            "first_name": "Ivan", 
+            "last_name": "Ivanoff", 
+            "jid": "tester@jabber.com", 
+            "date_of_birth": "1970-01-10",
+            "skype_id": "tester", 
+            "other_contacts": "Other contacts", 
+            "email": "tester@mail.com"
+        }
+    }
+]
