@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div id="left">
+        <p>{{ person.first_name }}</p>
+        <p>{{ person.last_name }}</p>
+        <p>{{ person.date_of_birth }}</p>
+        <p>Bio:<br>{{ person.bio }}</p>
+    </div>
+    <div id="right">
+        <p>Email:&nbsp;{{ person.email }}</p>
+        <p>Jabber:&nbsp;{{ person.jid }}</p>
+        <p>Skype:&nbsp;{{ person.skype_id }}</p>
+        <p>Other contacts:<br>{{ person.other_contacts }}</p>
+    </div>
+    <div id="footer">
+    </div>
+{% endblock %}
