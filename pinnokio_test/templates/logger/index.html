@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+   <p>List of first 10 requests</p>
+    <ul>
+        {% for request in requests %}
+            <li>[{{ request.creation_time }}]&nbsp;&quot;{{ request.method }}&nbsp;{{ request.path }}&quot;</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back to contacts</a>
+{% endblock %}
