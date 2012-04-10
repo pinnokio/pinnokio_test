@@ -106,6 +106,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'pinnokio_test.logger.middleware.RequestLoggerMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -122,7 +123,10 @@ TEMPLATE_DIRS = (
     join(PROJECT_ROOT, 'templates'),
 )
 
-FIXTURE_DIRS = (join(PROJECT_ROOT, 'contact/fixtures'), )
+FIXTURE_DIRS = (
+    join(PROJECT_ROOT, 'contact/fixtures'),
+    join(PROJECT_ROOT, 'logger/fixtures'),
+)
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -136,6 +140,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'pinnokio_test.contact',
+    'pinnokio_test.logger',
 )
 
 # A sample logging configuration. The only tangible logging
