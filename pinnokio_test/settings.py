@@ -122,7 +122,10 @@ TEMPLATE_DIRS = (
     join(PROJECT_ROOT, 'templates'),
 )
 
-FIXTURE_DIRS = (join(PROJECT_ROOT, 'contact/fixtures'), )
+FIXTURE_DIRS = (
+    join(PROJECT_ROOT, 'contact/fixtures'),
+    join(PROJECT_ROOT, 'logger/fixtures'),
+)
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -136,6 +139,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'pinnokio_test.contact',
+    'pinnokio_test.logger',
 )
 
 # A sample logging configuration. The only tangible logging
