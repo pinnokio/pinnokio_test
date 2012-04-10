@@ -1,7 +1,7 @@
 MANAGE=django-admin.py
 
 test:
-	PYTHONPATH=`pwd` DJANGO_SETTINGS_MODULE=pinnokio_test.settings $(MANAGE) test contact logger
+	PYTHONPATH=`pwd` DJANGO_SETTINGS_MODULE=pinnokio_test.settings $(MANAGE) test contact logger context
 
 run:
 	PYTHONPATH=`pwd` DJANGO_SETTINGS_MODULE=pinnokio_test.settings $(MANAGE) runserver
