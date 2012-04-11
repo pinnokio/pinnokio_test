@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.core.urlresolvers import reverse
 
-from pinnokio_test.logger.models import RequestEntry
+from pinnokio_test.extra.models import RequestEntry
 
 
 class RequestDbLoggerTest(TestCase):
