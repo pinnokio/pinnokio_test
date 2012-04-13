@@ -102,7 +102,7 @@ TEMPLATE_LOADERS = (
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
-#    'pinnokio_test.extra.context_processors.settings_context_processor',
+    'pinnokio_test.extra.context_processors.settings_context_processor',
 )
 
 MIDDLEWARE_CLASSES = (
