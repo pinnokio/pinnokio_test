@@ -1,6 +1,6 @@
 #-*- coding: utf8 -*-
 
-from pinnokio_test.logger.models import RequestEntry
+from pinnokio_test.extra.models import RequestEntry
 
 
 class RequestLoggerMiddleware(object):

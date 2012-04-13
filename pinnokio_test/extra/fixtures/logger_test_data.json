@@ -1,7 +1,7 @@
 [
     {
         "pk": 1, 
-        "model": "logger.requestentry",
+        "model": "extra.requestentry",
         "fields": {
             "path": "/test_urn0", 
             "method": "GET0", 
@@ -15,7 +15,7 @@
     },
     {
         "pk": 2, 
-        "model": "logger.requestentry",
+        "model": "extra.requestentry",
         "fields": {
             "path": "/test_urn1", 
             "method": "GET1", 
@@ -29,7 +29,7 @@
     },
     {
         "pk": 3, 
-        "model": "logger.requestentry",
+        "model": "extra.requestentry",
         "fields": {
             "path": "/test_urn2", 
             "method": "GET2", 
@@ -43,7 +43,7 @@
     },
     {
         "pk": 4, 
-        "model": "logger.requestentry",
+        "model": "extra.requestentry",
         "fields": {
             "path": "/test_urn3", 
             "method": "GET3", 
@@ -57,7 +57,7 @@
     },
     {
         "pk": 5, 
-        "model": "logger.requestentry",
+        "model": "extra.requestentry",
         "fields": {
             "path": "/test_urn4", 
             "method": "GET4", 
@@ -71,7 +71,7 @@
     },
     {
         "pk": 6, 
-        "model": "logger.requestentry",
+        "model": "extra.requestentry",
         "fields": {
             "path": "/test_urn5", 
             "method": "GET5", 
@@ -85,7 +85,7 @@
     },
     {
         "pk": 7, 
-        "model": "logger.requestentry",
+        "model": "extra.requestentry",
         "fields": {
             "path": "/test_urn6", 
             "method": "GET6", 
@@ -99,7 +99,7 @@
     },
     {
         "pk": 8, 
-        "model": "logger.requestentry",
+        "model": "extra.requestentry",
         "fields": {
             "path": "/test_urn7", 
             "method": "GET7", 
@@ -113,7 +113,7 @@
     },
     {
         "pk": 9, 
-        "model": "logger.requestentry",
+        "model": "extra.requestentry",
         "fields": {
             "path": "/test_urn8", 
             "method": "GET8", 
@@ -127,7 +127,7 @@
     },
     {
         "pk": 10, 
-        "model": "logger.requestentry",
+        "model": "extra.requestentry",
         "fields": {
             "path": "/test_urn9", 
             "method": "GET9", 
