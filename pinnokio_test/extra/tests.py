@@ -1,5 +1,6 @@
 from django.test import TestCase
 from django.core.urlresolvers import reverse
+from django.conf import settings
 
 from pinnokio_test.extra.models import RequestEntry
 
@@ -38,3 +39,14 @@ class RequestListViewTest(TestCase):
         for request in requests:
             for key in ('creation_time', 'method', 'path'):
                 self.assertContains(self.response, request.__dict__[key])
+
+
+class SettingsContextTest(TestCase):
+    """ Test for settings context processor """
+
+    def test_context(self):
+        """ Test for checking context variable"""
+
+        response = self.client.get('requests_view_10')
+        self.assertTrue('settings' in response.context)
+        self.assertEqual(response.context['settings'], settings)

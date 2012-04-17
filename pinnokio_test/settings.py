@@ -102,7 +102,7 @@ TEMPLATE_LOADERS = (
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
-#    'pinnokio_test.context.context_processors.settings_context_processor',
+    'pinnokio_test.extra.context_processors.settings_context_processor',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -144,6 +144,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'south',
     'pinnokio_test.contact',
     'pinnokio_test.extra',
 )
