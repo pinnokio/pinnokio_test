@@ -40,3 +40,44 @@ class ContactTestCase(TestCase):
             if key == 'date_of_birth':
                 content = content.strftime('%Y-%m-%d')
             self.assertContains(self.response, content)
+
+class ContactEditFormTestCase(TestCase):
+    """ Tests for contact_edit view  """
+
+    CONTEXT_NAME = 'form'
+    URL = 'contact_edit'
+    PERSON = ContactTestCase.TEST_PERSON
+
+    def test_success_login(self):
+        client = self.client
+        login_successful = client.login(username='admin', password='admin')
+        self.assertTrue(login_successful)
+
+    def test_login_url_response_status(self):
+        response = self.client.get(self.URL)
+        self.assertEqual(response.status_code, 200)
+
+    def test_unauthorized_access(self):
+        self.client.logout()
+        response = self.client.get(self.URL)
+        self.assertEqual(response.status_code, 302)
+
+    def test_form_in_context(self):
+        response = self.client.get(self.URL)
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(self.CONTEXT_NAME in response.context)
+
+    def test_form_is_empty(self):
+        response = self.client.post(self.URL, {})
+        self.assertEqual(response.status_code, 200)
+        self.assertFalse(response.context[self.CONTEXT_NAME].is_valid())
+
+    def test_form_is_valid(self):
+        response = self.client.post(self.URL, self.PERSON)
+        self.assertEqual(response.status_code, 302)
+
+    def test_required_field_is_empty(self):
+        response = self.client.post(self.URL, {'first_name': ''})
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(
+                    response.context[self.CONTEXT_NAME]['first_name'].errors)
