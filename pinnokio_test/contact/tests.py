@@ -49,34 +49,41 @@ class ContactEditFormTestCase(TestCase):
     PERSON = ContactTestCase.TEST_PERSON
 
     def test_success_login(self):
+        """ Testing for login as an authorized user """
         client = self.client
         login_successful = client.login(username='admin', password='admin')
         self.assertTrue(login_successful)
 
     def test_login_url_response_status(self):
+        """ Testing for response after login as authorized user """
         response = self.client.get(self.URL)
         self.assertEqual(response.status_code, 200)
 
     def test_unauthorized_access(self):
+        """ Testing for login as non-authorized user """
         self.client.logout()
         response = self.client.get(self.URL)
         self.assertEqual(response.status_code, 302)
 
     def test_form_in_context(self):
+        """ Testing that form variable is in context """
         response = self.client.get(self.URL)
         self.assertEqual(response.status_code, 200)
         self.assertTrue(self.CONTEXT_NAME in response.context)
 
     def test_form_is_empty(self):
+        """ Testing for empty post """
         response = self.client.post(self.URL, {})
         self.assertEqual(response.status_code, 200)
         self.assertFalse(response.context[self.CONTEXT_NAME].is_valid())
 
     def test_form_is_valid(self):
+        """ Testing that form is valid and returns redirect """
         response = self.client.post(self.URL, self.PERSON)
         self.assertEqual(response.status_code, 302)
 
     def test_required_field_is_empty(self):
+        """ Testing for errors if required filed is empty """
         response = self.client.post(self.URL, {'first_name': ''})
         self.assertEqual(response.status_code, 200)
         self.assertTrue(
